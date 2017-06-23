@@ -1,6 +1,6 @@
 {% set name = "GPy" %}
-{% set version = "1.6.1" %}
-{% set sha256 = "7b8a87c660282eeba538b8c622b5f2b31e3b2cae8eb7c672c2a12b96923eeb1a" %}
+{% set version = "1.7.7" %}
+{% set sha256 = "417f6dda98b97d914d141f6c2e63e0775d87aead29ae64350d2ce249738c9aac" %}
 
 
 package:
@@ -24,7 +24,7 @@ requirements:
     - toolchain
   run:
     - python
-    - paramz >=0.6.9
+    - paramz >=0.7.4
     - numpy >=1.7
     - scipy >=0.16
     - six
@@ -37,11 +37,11 @@ test:
 about:
   home: http://github.com/SheffieldML/GPy
   license: BSD 3-clause
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE.txt'
+  license_file: LICENSE.txt
   summary: 'The Gaussian Process Toolbox'
   doc_url: https://gpy.readthedocs.io/
   dev_url: https://github.com/SheffieldML/GPy
 
 extra:
   recipe-maintainers:
-    - dirmeier    
+    - dirmeier
