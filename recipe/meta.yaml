@@ -1,6 +1,6 @@
 {% set name = "GPy" %}
-{% set version = "1.7.7" %}
-{% set sha256 = "417f6dda98b97d914d141f6c2e63e0775d87aead29ae64350d2ce249738c9aac" %}
+{% set version = "1.8.4" %}
+{% set sha256 = "38c1202f1790952b88c298224139ee5b14d4518e3ddc6186c60db2ece016d8c1" %}
 
 
 package:
@@ -24,7 +24,7 @@ requirements:
     - toolchain
   run:
     - python
-    - paramz >=0.7.4
+    - paramz >=0.8.5
     - numpy >=1.7
     - scipy >=0.16
     - six
@@ -39,7 +39,7 @@ about:
   license: BSD 3-clause
   license_file: LICENSE.txt
   summary: 'The Gaussian Process Toolbox'
-  doc_url: https://gpy.readthedocs.io/
+  doc_url: https://pythonhosted.org/GPy/
   dev_url: https://github.com/SheffieldML/GPy
 
 extra:
