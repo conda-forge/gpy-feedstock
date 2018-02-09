@@ -21,6 +21,8 @@ requirements:
     - python
     - setuptools
     - numpy >=1.7
+    - scipy >=0.16
+    - six
     - toolchain
   run:
     - python
