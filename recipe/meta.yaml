@@ -1,6 +1,6 @@
 {% set name = "GPy" %}
-{% set version = "1.8.4" %}
-{% set sha256 = "38c1202f1790952b88c298224139ee5b14d4518e3ddc6186c60db2ece016d8c1" %}
+{% set version = "1.8.5" %}
+{% set sha256 = "1562e34629192f209273f454e41614a127c6ef04144cd0eb5992d484721d55d3" %}
 
 
 package:
@@ -21,6 +21,8 @@ requirements:
     - python
     - setuptools
     - numpy >=1.7
+    - scipy >=0.16
+    - six
     - toolchain
   run:
     - python
