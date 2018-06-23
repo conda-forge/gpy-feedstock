@@ -18,16 +18,17 @@ build:
 
 requirements:
   build:
+    - {{ compiler('c') }}
+  host:
     - python
     - setuptools
-    - numpy >=1.7
+    - numpy
     - scipy >=0.16
     - six
-    - toolchain
   run:
     - python
     - paramz >=0.8.5
-    - numpy >=1.7
+    - {{ pin_compatible('numpy') }}
     - scipy >=0.16
     - six
     - matplotlib
