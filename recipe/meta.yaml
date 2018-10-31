@@ -1,6 +1,6 @@
 {% set name = "GPy" %}
-{% set version = "1.9.5" %}
-{% set sha256 = "97519bea69e7d7a703d9575c31d68a7c6f974ae125ee9d4a3e1fb510eadfb97e" %}
+{% set version = "1.9.6" %}
+{% set sha256 = "f11d649b3320d4cb836d283706754953277c8696977726803ccd3ee1355a94a7" %}
 
 
 package:
