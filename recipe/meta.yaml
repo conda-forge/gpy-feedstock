@@ -21,8 +21,7 @@ requirements:
     - {{ compiler('c') }}    
   host:
     - python <=3.6
-    - setuptools    
-    - numpy >=1.7
+    - setuptools
     - scipy >=0.16
     - six
   run:
@@ -41,7 +40,7 @@ about:
   home: http://github.com/SheffieldML/GPy
   license: BSD 3-clause
   license_file: LICENSE.txt
-  summary: 'The Gaussian Process Toolbox'
+  summary: "The Gaussian Process Toolbox"
   doc_url: https://pythonhosted.org/GPy/
   dev_url: https://github.com/SheffieldML/GPy
 
