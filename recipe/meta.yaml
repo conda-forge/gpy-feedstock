@@ -35,8 +35,9 @@ requirements:
     - matplotlib
 
 test:
-  imports:
-    - GPy
+  commands:
+    - export MPLBACKEND="AGG"  # [linux and py2k]
+    - python -c "import Gpy"
 
 about:
   home: http://github.com/SheffieldML/GPy
