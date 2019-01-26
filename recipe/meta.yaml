@@ -13,20 +13,20 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  number: 1000
+  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   build:
     - {{ compiler('c') }}
   host:
-    - python
-    - setuptools
+    - python <=3.6
+    - pop
     - numpy
     - scipy >=0.16
     - six
   run:
-    - python
+    - python <=3.6
     - paramz >=0.8.5
     - {{ pin_compatible('numpy') }}
     - scipy >=0.16
@@ -41,7 +41,7 @@ about:
   home: http://github.com/SheffieldML/GPy
   license: BSD 3-clause
   license_file: LICENSE.txt
-  summary: 'The Gaussian Process Toolbox'
+  summary: The Gaussian Process Toolbox
   doc_url: https://pythonhosted.org/GPy/
   dev_url: https://github.com/SheffieldML/GPy
 
