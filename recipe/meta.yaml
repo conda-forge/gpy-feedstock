@@ -37,7 +37,7 @@ requirements:
 test:
   commands:
     - export MPLBACKEND="AGG"  # [linux and py2k]
-    - python -c "import Gpy"
+    - python -c "import GPy"
 
 about:
   home: http://github.com/SheffieldML/GPy
