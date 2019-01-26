@@ -21,7 +21,7 @@ requirements:
     - {{ compiler('c') }}
   host:
     - python <=3.6
-    - pop
+    - pip
     - numpy
     - scipy >=0.16
     - six
