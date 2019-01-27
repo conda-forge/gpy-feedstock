@@ -13,38 +13,41 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  number: 1000
+  skip: True  # [py>=37]
+  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   build:
     - {{ compiler('c') }}
   host:
     - python
-    - setuptools
+    - pip
     - numpy
     - scipy >=0.16
     - six
   run:
     - python
-    - paramz >=0.8.5
+    - paramz >=0.9.0
     - {{ pin_compatible('numpy') }}
     - scipy >=0.16
     - six
     - matplotlib
 
 test:
-  imports:
-    - GPy
+  commands:
+    - export MPLBACKEND="AGG"  # [linux and py2k]
+    - python -c "import GPy"
 
 about:
   home: http://github.com/SheffieldML/GPy
   license: BSD 3-clause
   license_file: LICENSE.txt
-  summary: 'The Gaussian Process Toolbox'
+  summary: The Gaussian Process Toolbox
   doc_url: https://pythonhosted.org/GPy/
   dev_url: https://github.com/SheffieldML/GPy
 
 extra:
   recipe-maintainers:
     - dirmeier
+    - beckermr
