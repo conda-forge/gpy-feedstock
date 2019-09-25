@@ -199,4 +199,5 @@ Feedstock Maintainers
 
 * [@beckermr](https://github.com/beckermr/)
 * [@dirmeier](https://github.com/dirmeier/)
+* [@thompsonsed](https://github.com/thompsonsed/)
 
