@@ -20,7 +20,7 @@ requirements:
   build:
     - {{ compiler('c') }}
   host:
-    - python <=3.8
+    - python
     - pip
     - numpy
     - scipy >=0.16
