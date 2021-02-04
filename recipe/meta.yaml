@@ -20,13 +20,13 @@ requirements:
   build:
     - {{ compiler('c') }}
   host:
-    - python
+    - python <=3.9
     - pip
     - numpy
     - scipy >=0.16
     - six
   run:
-    - python
+    - python <=3.9
     - paramz >=0.9.0
     - {{ pin_compatible('numpy') }}
     - scipy >=0.16
