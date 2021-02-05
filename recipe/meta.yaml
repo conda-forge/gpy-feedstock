@@ -13,14 +13,15 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 5
+  number: 7
   script: "{{ PYTHON }} -m pip install . -vv"
+  skip: true  # [py>38]
 
 requirements:
   build:
     - {{ compiler('c') }}
   host:
-    - python <=3.8
+    - python
     - pip
     - numpy
     - scipy >=0.16
@@ -40,7 +41,7 @@ test:
 
 about:
   home: http://github.com/SheffieldML/GPy
-  license: BSD 3-clause
+  license: BSD-3-Clause
   license_file: LICENSE.txt
   summary: The Gaussian Process Toolbox
   doc_url: https://pythonhosted.org/GPy/
