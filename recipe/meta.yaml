@@ -1,10 +1,10 @@
 {% set name = "GPy" %}
-{% set version = "1.9.9" %}
-{% set sha256 = "04faf0c24eacc4dea60727c50a48a07ddf9b5751a3b73c382105e2a31657c7ed" %}
+{% set version = "1.10.0" %}
+{% set sha256 = "a2b793ef8d0ac71739e7ba1c203bc8a5afa191058b42caa617e0e29aa52aa6fb" %}
 
 
 package:
-  name: "{{ name|lower }}"
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
@@ -13,8 +13,8 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 7
-  script: "{{ PYTHON }} -m pip install . -vv"
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [py>38]
 
 requirements:
