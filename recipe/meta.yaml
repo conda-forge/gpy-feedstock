@@ -42,6 +42,8 @@ test:
     - export MPLBACKEND="AGG"  # [linux and py2k]
     - python -c "import GPy"
     - pip check
+  requires:
+    - pip
 
 about:
   home: http://github.com/SheffieldML/GPy
