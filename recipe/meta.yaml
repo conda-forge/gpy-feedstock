@@ -35,15 +35,11 @@ requirements:
     - scipy >=0.16
     - six
     - matplotlib-base
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
 
 test:
   commands:
     - export MPLBACKEND="AGG"  # [linux and py2k]
     - python -c "import GPy"
-    - pip check
-  requires:
-    - pip
 
 about:
   home: http://github.com/SheffieldML/GPy
