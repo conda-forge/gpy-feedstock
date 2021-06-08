@@ -13,9 +13,8 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
-  skip: true  # [py>38]
 
 requirements:
   build:
@@ -36,11 +35,13 @@ requirements:
     - scipy >=0.16
     - six
     - matplotlib-base
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
 
 test:
   commands:
     - export MPLBACKEND="AGG"  # [linux and py2k]
     - python -c "import GPy"
+    - pip check
 
 about:
   home: http://github.com/SheffieldML/GPy
