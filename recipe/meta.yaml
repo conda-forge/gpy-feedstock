@@ -13,7 +13,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<=38]
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -42,6 +42,9 @@ test:
   commands:
     - export MPLBACKEND="AGG"  # [linux and py2k]
     - python -c "import GPy"
+    - pip check
+  requires:
+    - pip
 
 about:
   home: http://github.com/SheffieldML/GPy
