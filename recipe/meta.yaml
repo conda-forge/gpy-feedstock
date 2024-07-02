@@ -13,7 +13,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py<=38]
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -33,7 +33,6 @@ requirements:
   run:
     - python
     - paramz >=0.9.0
-    - {{ pin_compatible('numpy') }}
     - scipy >=0.16
     - six
     - matplotlib-base
