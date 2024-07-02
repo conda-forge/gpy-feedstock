@@ -36,7 +36,7 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - scipy >=0.16
     - six
-    - matplotlib-base
+    - matplotlib-base <3.9.0
 
 test:
   commands:
