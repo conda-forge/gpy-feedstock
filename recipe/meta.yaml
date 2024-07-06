@@ -33,7 +33,7 @@ requirements:
   run:
     - python
     - cython
-    - paramz >=0.9.0
+    - paramz >=0.9.6
     - {{ pin_compatible('numpy') }}
     - scipy <1.12.0,>=1.3.0
     - six
