@@ -1,6 +1,6 @@
 {% set name = "GPy" %}
-{% set version = "1.13.2" %}
-{% set sha256 = "a38256b4dda536a5b5e6134a3924b42d454e987ee801fb6fc8b55a922da27920" %}
+{% set version = "1.14.2" %}
+{% set sha256 = "3c6a102cd0939ca62aab27038acc7c9970559fbda653dbdccc5d8ad02bd1dbad" %}
 
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | lower }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
