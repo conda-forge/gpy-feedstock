@@ -13,8 +13,8 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
-  skip: true  # [py!=312]
+  number: 1
+  skip: true  # [py<312]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -30,6 +30,7 @@ requirements:
     - pip
     - numpy
     - cython
+    - setuptools
     - scipy >=0.16
     - six
   run:
