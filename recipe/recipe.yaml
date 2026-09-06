@@ -1,0 +1,73 @@
+schema_version: 1
+
+context:
+  name: GPy
+  version: "1.14.2"
+  sha256: 3c6a102cd0939ca62aab27038acc7c9970559fbda653dbdccc5d8ad02bd1dbad
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | lower }}-${{ version }}.tar.gz
+  sha256: ${{ sha256 }}
+  file_name: ${{ name }}-${{ version }}.tar.gz
+
+build:
+  number: 2
+  skip: match(python, "<3.12")
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  build:
+    - if: build_platform != target_platform
+      then: python
+    - if: build_platform != target_platform
+      then: cross-python_${{ target_platform }}
+    - if: build_platform != target_platform
+      then: numpy
+    - if: build_platform != target_platform
+      then: cython
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
+  host:
+    - python
+    - pip
+    - numpy
+    - cython
+    - setuptools
+    - scipy >=0.16
+    - six
+  run:
+    - python
+    - cython
+    - paramz >0.9.6
+    - ${{ pin_compatible('numpy') }}
+    - scipy
+    - six
+    - matplotlib-base
+
+tests:
+  - requirements:
+      run:
+        - pip
+    script:
+      - if: linux and match(python, ">=2,<3")
+        then: export MPLBACKEND="AGG"
+      - python -c "import GPy"
+      - pip check
+
+about:
+  license: BSD-3-Clause
+  license_file: LICENSE.txt
+  summary: The Gaussian Process Toolbox
+  homepage: http://github.com/SheffieldML/GPy
+  repository: https://github.com/SheffieldML/GPy
+  documentation: https://pythonhosted.org/GPy/
+
+extra:
+  recipe-maintainers:
+    - dirmeier
+    - thompsonsed
+    - jan-janssen
