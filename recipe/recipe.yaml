@@ -2,8 +2,8 @@ schema_version: 1
 
 context:
   name: GPy
-  version: "1.14.2"
-  sha256: 3c6a102cd0939ca62aab27038acc7c9970559fbda653dbdccc5d8ad02bd1dbad
+  version: "1.15.0"
+  sha256: 5f47700d7a1d6154367bad3f84c0482b8817713d94d5c128495aa9180d7349ec
 
 package:
   name: ${{ name|lower }}
@@ -14,7 +14,7 @@ source:
   sha256: ${{ sha256 }}
 
 build:
-  number: 3
+  number: 0
   skip: match(python, "<3.12")
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
